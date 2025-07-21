@@ -17,7 +17,7 @@
   // }
 
   "React Component": {
-    "prefix": "rc.component",
+    "prefix": "rc:component",
     "body": [
       "function ${1:ComponentName}() {",
       "  return (",

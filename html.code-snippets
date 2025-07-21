@@ -1,0 +1,273 @@
+{
+  "HTML Header with Nav": {
+    "prefix": "html:header",
+    "body": [
+      "<header>",
+      "  <div class=\"logo\">",
+      "    <img src=\"logo.png\" alt=\"Logo\" />",
+      "  </div>",
+      "  <nav>",
+      "    <ul>",
+      "      <li><a href=\"/\">Trang chủ</a></li>",
+      "      <li><a href=\"/about\">Giới thiệu</a></li>",
+      "      <li><a href=\"/contact\">Liên hệ</a></li>",
+      "    </ul>",
+      "  </nav>",
+      "</header>"
+    ],
+    "description": "Header với logo và điều hướng"
+  },
+  "HTML Nav": {
+    "prefix": "html:nav",
+    "body": [
+      "<nav>",
+      "  <ul>",
+      "    <li><a href=\"/home\">Trang chủ</a></li>",
+      "    <li><a href=\"/about\">Giới thiệu</a></li>",
+      "    <li><a href=\"/services\">Dịch vụ</a></li>",
+      "    <li><a href=\"/contact\">Liên hệ</a></li>",
+      "  </ul>",
+      "</nav>"
+    ],
+    "description": "Thẻ nav HTML cơ bản"
+  },
+  "HTML Section": {
+    "prefix": "html:section",
+    "body": [
+      "<section>",
+      "  <h2>Tiêu đề phần</h2>",
+      "  <p>Nội dung của phần này.</p>",
+      "</section>"
+    ],
+    "description": "Section HTML"
+  },
+  "HTML Article": {
+    "prefix": "html:article",
+    "body": [
+      "<article>",
+      "  <h2>Tiêu đề bài viết</h2>",
+      "  <p>Nội dung bài viết ở đây.</p>",
+      "  <a href=\"#\">Đọc thêm</a>",
+      "</article>"
+    ],
+    "description": "Bài viết Article HTML"
+  },
+  "HTML Footer": {
+    "prefix": "html:footer",
+    "body": [
+      "<footer>",
+      "  <p>&copy; 2023 Công ty của bạn.</p>",
+      "  <nav>",
+      "    <ul>",
+      "      <li><a href=\"/privacy\">Chính sách</a></li>",
+      "      <li><a href=\"/terms\">Điều khoản</a></li>",
+      "    </ul>",
+      "  </nav>",
+      "</footer>"
+    ],
+    "description": "Footer HTML với bản quyền"
+  },
+  "HTML Div": {
+    "prefix": "html:div",
+    "body": [
+      "<div class=\"container\">",
+      "  <h2>Tiêu đề</h2>",
+      "  <p>Đây là một đoạn văn trong một thẻ div.</p>",
+      "</div>"
+    ],
+    "description": "Thẻ div HTML cơ bản"
+  },
+  "HTML Form": {
+    "prefix": "html:form",
+    "body": [
+      "<form action=\"/submit\" method=\"post\">",
+      "  <label for=\"name\">Tên:</label>",
+      "  <input type=\"text\" id=\"name\" name=\"name\" required />",
+      "  <button type=\"submit\">Gửi</button>",
+      "</form>"
+    ],
+    "description": "Form nhập cơ bản"
+  },
+  "HTML Input": {
+    "prefix": "html:input",
+    "body": [
+      "<input type=\"text\" id=\"inputId\" name=\"inputName\" placeholder=\"Nhập dữ liệu\" required />"
+    ],
+    "description": "Input văn bản"
+  },
+  "HTML Select": {
+    "prefix": "html:select",
+    "body": [
+      "<select id=\"selectId\" name=\"selectName\">",
+      "  <option value=\"1\">Tùy chọn 1</option>",
+      "  <option value=\"2\">Tùy chọn 2</option>",
+      "</select>"
+    ],
+    "description": "Select cơ bản"
+  },
+  "HTML Textarea": {
+    "prefix": "html:textarea",
+    "body": [
+      "<textarea id=\"textareaId\" name=\"textareaName\" rows=\"4\" cols=\"50\" placeholder=\"Nhập nội dung\"></textarea>"
+    ],
+    "description": "Textarea cơ bản"
+  },
+  "HTML Button": {
+    "prefix": "html:button",
+    "body": ["<button type=\"button\">Bấm tôi</button>"],
+    "description": "Button HTML"
+  },
+  "HTML Label": {
+    "prefix": "html:label",
+    "body": ["<label for=\"inputId\">Nhãn:</label>"],
+    "description": "Label liên kết với input"
+  },
+  "HTML Image": {
+    "prefix": "html:image",
+    "body": [
+      "<img src=\"image.jpg\" alt=\"Mô tả hình ảnh\" width=\"600\" height=\"400\" />"
+    ],
+    "description": "Ảnh HTML"
+  },
+  "HTML Video": {
+    "prefix": "html:video",
+    "body": [
+      "<video width=\"600\" height=\"400\" controls>",
+      "  <source src=\"video.mp4\" type=\"video/mp4\">",
+      "  Trình duyệt không hỗ trợ video.",
+      "</video>"
+    ],
+    "description": "Video HTML"
+  },
+  "HTML Audio": {
+    "prefix": "html:audio",
+    "body": [
+      "<audio controls>",
+      "  <source src=\"audio.mp3\" type=\"audio/mpeg\">",
+      "  Trình duyệt không hỗ trợ audio.",
+      "</audio>"
+    ],
+    "description": "Audio HTML"
+  },
+  "HTML Table": {
+    "prefix": "html:table",
+    "body": [
+      "<table>",
+      "  <thead>",
+      "    <tr><th>Tiêu đề 1</th><th>Tiêu đề 2</th></tr>",
+      "  </thead>",
+      "  <tbody>",
+      "    <tr><td>Dữ liệu 1</td><td>Dữ liệu 2</td></tr>",
+      "  </tbody>",
+      "</table>"
+    ],
+    "description": "Bảng HTML"
+  },
+  "HTML List": {
+    "prefix": "html:list",
+    "body": ["<ul>", "  <li>Mục 1</li>", "  <li>Mục 2</li>", "</ul>"],
+    "description": "Danh sách HTML"
+  },
+  "HTML Link": {
+    "prefix": "html:link",
+    "body": [
+      "<a href=\"https://example.com\" target=\"_blank\" rel=\"noopener noreferrer\">Liên kết</a>"
+    ],
+    "description": "Liên kết HTML"
+  },
+  "HTML Blockquote": {
+    "prefix": "html:blockquote",
+    "body": [
+      "<blockquote cite=\"https://example.com\">",
+      "  <p>Đây là một trích dẫn.</p>",
+      "  <footer>— Nguồn</footer>",
+      "</blockquote>"
+    ],
+    "description": "Trích dẫn HTML"
+  },
+  "HTML Code Block": {
+    "prefix": "html:code-block",
+    "body": [
+      "<pre><code>",
+      "  function hello() {",
+      "    console.log('Hello');",
+      "  }",
+      "</code></pre>"
+    ],
+    "description": "Đoạn mã HTML"
+  },
+  "HTML Alert Box": {
+    "prefix": "html:alert-box",
+    "body": [
+      "<div style=\"padding: 20px; background: #f44336; color: white;\">",
+      "  <strong>Cảnh báo!</strong> Có lỗi xảy ra.",
+      "</div>"
+    ],
+    "description": "Hộp cảnh báo"
+  },
+  "HTML Notification": {
+    "prefix": "html:notification",
+    "body": [
+      "<div style=\"padding: 20px; background: #2196F3; color: white;\">",
+      "  <strong>Thông báo!</strong> Có thông tin mới.",
+      "</div>"
+    ],
+    "description": "Thông báo HTML"
+  },
+  "HTML Tooltip": {
+    "prefix": "html:tooltip",
+    "body": [
+      "<span style=\"position: relative;\">",
+      "  Di chuột vào đây",
+      "  <span style=\"visibility: hidden; position: absolute; background: black; color: white; padding: 5px;\">Tooltip</span>",
+      "</span>"
+    ],
+    "description": "Tooltip đơn giản"
+  },
+  "HTML Modal": {
+    "prefix": "html:modal",
+    "body": [
+      "<div class=\"modal\" style=\"display: none; position: fixed; z-index: 1; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.4);\">",
+      "  <div class=\"modal-content\" style=\"margin: 15% auto; padding: 20px; background: white; width: 80%;\">",
+      "    <span class=\"close\" style=\"float: right; font-size: 28px;\">&times;</span>",
+      "    <h2>Tiêu đề</h2>",
+      "    <p>Nội dung modal</p>",
+      "  </div>",
+      "</div>"
+    ],
+    "description": "Modal HTML"
+  },
+  "HTML Accordion": {
+    "prefix": "html:accordion",
+    "body": [
+      "<div style=\"background: #f1f1f1;\">",
+      "  <h3 style=\"cursor: pointer;\">Accordion</h3>",
+      "  <div style=\"display: none;\">Nội dung accordion</div>",
+      "</div>"
+    ],
+    "description": "Accordion cơ bản"
+  },
+  "HTML Script": {
+    "prefix": "html:script",
+    "body": ["<script src=\"script.js\"></script>"],
+    "description": "Script ngoài"
+  },
+  "HTML Style": {
+    "prefix": "html:style",
+    "body": ["<style>", "  body { font-family: sans-serif; }", "</style>"],
+    "description": "Style nội tuyến"
+  },
+  "HTML Meta": {
+    "prefix": "html:meta",
+    "body": [
+      "<meta charset=\"UTF-8\">",
+      "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">"
+    ],
+    "description": "Thẻ meta cơ bản"
+  },
+  "HTML Link Stylesheet": {
+    "prefix": "html:link-stylesheet",
+    "body": ["<link rel=\"stylesheet\" href=\"styles.css\">"],
+    "description": "Link CSS ngoài"
+  }
+}
