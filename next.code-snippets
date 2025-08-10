@@ -1,0 +1,49 @@
+{
+  "nextjs tailwind @": {
+    "prefix": "next:tailwind",
+    "body": [
+      "@tailwind base;",
+      "@tailwind components;",
+      "@tailwind utilities;"
+    ],
+    "description": "Tailwind CSS base imports"
+  },
+  "nextjs google font import": {
+    "prefix": "next:font",
+    "body": [
+      "import { ${1:Inter} } from 'next/font/google';",
+      "",
+      "export const ${2:inter} = ${1}({ subsets: ['${3:latin}'] });"
+    ],
+    "description": "Next.js 13+ Google font import snippet"
+  },
+  "nextjs font classname": {
+    "prefix": "next:font-class",
+    "body": ["{`${${1:fontVar}.className} antialiased`}"],
+    "description": "Next.js font variable combined with other classes"
+  },
+  "nextjs clsx": {
+    "prefix": "next:clsx",
+    "body": [
+      "  className={clsx(",
+      "    '${1:inline-flex}',",
+      "    {",
+      "      '${2:bg-gray-100}': ${3:status} === '${4:pending}',",
+      "      '${5:bg-green-500}': ${3} === '${6:paid}',",
+      "    },",
+      "  )}"
+    ]
+  },
+  "next-image": {
+    "prefix": "next:image",
+    "body": [
+      "<Image",
+      "  src=\"${1:/path/to/image.png}\"",
+      "  width={${2:1000}}",
+      "  height={${3:760}}",
+      "  className=\"${4:hidden md:block}\"",
+      "  alt=\"${5:Image description}\"",
+      "/>"
+    ]
+  }
+}

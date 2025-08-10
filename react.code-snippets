@@ -1,39 +1,4 @@
 {
-  "React Component": {
-    "prefix": "rc:component",
-    "body": [
-      "function ${1:ComponentName}() {",
-      "  return (",
-      "    <div>",
-      "      ${2:Nội dung component}",
-      "    </div>",
-      "  );",
-      "}",
-      "",
-      "export default ${1:ComponentName};"
-    ],
-    "description": "Tạo một React functional component"
-  },
-  "React useState": {
-    "prefix": "rc:state",
-    "body": [
-      "import { useState } from 'react';",
-      "",
-      "function ${1:ComponentName}() {",
-      "  const [${2:state}, set${2/(.*)/${1:/capitalize}/}] = useState(${3:initialValue});",
-      "",
-      "  return (",
-      "    <div>",
-      "      <p>${2}: {${2}}</p>",
-      "      <button onClick={() => set${2/(.*)/${1:/capitalize}/}(${4:newValue})}>Cập nhật</button>",
-      "    </div>",
-      "  );",
-      "}",
-      "",
-      "export default ${1:ComponentName};"
-    ],
-    "description": "Tạo component React sử dụng useState"
-  },
   "React useEffect": {
     "prefix": "rc:effect",
     "body": [
@@ -76,17 +41,6 @@
       "export default ${1:ClickButton};"
     ],
     "description": "Tạo React component bắt sự kiện với onClick"
-  },
-  "React Props": {
-    "prefix": "rc:props",
-    "body": [
-      "function ${1:Greeting}({ ${2:name} }) {",
-      "  return <h2>Xin chào, {${2:name}}!</h2>;",
-      "}",
-      "",
-      "export default ${1:Greeting};"
-    ],
-    "description": "Tạo component nhận props để hiển thị dữ liệu"
   },
   "React Form Input": {
     "prefix": "rc:form",

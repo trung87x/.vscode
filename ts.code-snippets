@@ -1,0 +1,12 @@
+{
+  "ts type generic": {
+    "prefix": "ts:type",
+    "body": [
+      "export type ${1:TypeName} = {",
+      "  ${2:property1}: ${3:string};",
+      "  ${4:property2}?: ${5:number};",
+      "  ${6:// thêm thuộc tính khác tại đây}",
+      "};"
+    ]
+  }
+}
