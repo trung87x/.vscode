@@ -1,0 +1,60 @@
+{
+  "TS: Type Alias": {
+    "prefix": "ts:type",
+    "body": [
+      "type ${1:User} = {",
+      "  ${2:name}: string;",
+      "  ${3:age}?: number;",
+      "};"
+    ],
+    "description": "Tạo kiểu dữ liệu với type"
+  },
+  "TS: Interface": {
+    "prefix": "ts:interface",
+    "body": [
+      "interface ${1:User} {",
+      "  ${2:name}: string;",
+      "  ${3:email}: string;",
+      "}"
+    ],
+    "description": "Tạo interface"
+  },
+  "TS: Function Type": {
+    "prefix": "ts:function",
+    "body": [
+      "const ${1:sum} = (${2:a}: number, ${3:b}: number): number => {",
+      "  return ${2:a} + ${3:b};",
+      "};"
+    ],
+    "description": "Tạo function có định nghĩa kiểu tham số và trả về"
+  },
+  "TS: Union Type": {
+    "prefix": "ts:union",
+    "body": ["type ${1:UserRole} = 'admin' | 'editor' | 'viewer';"],
+    "description": "Tạo kiểu Union"
+  },
+  "TS: Generic Function": {
+    "prefix": "ts:generic",
+    "body": [
+      "function ${1:identity}<T>(${2:value}: T): T {",
+      "  return ${2:value};",
+      "}"
+    ],
+    "description": "Tạo hàm generic đơn giản"
+  },
+  "TS: Type Assertion": {
+    "prefix": "ts:assert",
+    "body": ["const ${1:data} = ${2:response} as ${3:User};"],
+    "description": "Dùng type assertion để ép kiểu"
+  },
+  "TS: Readonly Property": {
+    "prefix": "ts:readonly",
+    "body": [
+      "interface ${1:User} {",
+      "  readonly ${2:id}: string;",
+      "  ${3:name}: string;",
+      "}"
+    ],
+    "description": "Tạo thuộc tính readonly trong interface"
+  }
+}
