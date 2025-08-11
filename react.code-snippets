@@ -8,9 +8,9 @@
       "      ${2:Nội dung component}",
       "    </>",
       "  );",
-      "}"
-      // "",
-      // "export default ${1:ComponentName};"
+      "}",
+      "",
+      "export default ${1:ComponentName};"
     ]
   },
   "React Props": {

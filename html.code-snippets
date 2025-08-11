@@ -51,11 +51,16 @@
       "<!-- Babel: cho phép viết JSX trực tiếp trong trình duyệt (chỉ dùng khi sandbox/dev) -->",
       "<script src=\"https://unpkg.com/@babel/standalone/babel.min.js\"></script>",
       "<script type=\"text/babel\" data-presets=\"react\">",
+      "  const { StrictMode, useState } = React;",
+      "",
       "  function App() {",
+      "    const [count, setCount] = useState(0);",
       "    return (",
-      "      <>",
-      "       <h1>React</h1>",
-      "      </>",
+      "      <main>",
+      "        <h1>Develop. Preview. Ship.</h1>",
+      "        <p>React 18 chạy bằng UMD + Babel.</p>",
+      "        <button onClick={() => setCount(c => c + 1)}>Bạn bấm {count} lần</button>",
+      "      </main>",
       "    );",
       "  }",
       "",
@@ -67,7 +72,7 @@
       "  );",
       "</script>"
     ],
-    "description": "React 18 + Babel minimal sandbox (không bọc <body>)"
+    "description": "React 18 + Babel minimal sandbox có useState demo"
   },
   "Tailwind CSS CDN": {
     "prefix": "off:tailwind-cdn",

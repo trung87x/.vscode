@@ -1,13 +1,4 @@
 {
-  "nextjs tailwind @": {
-    "prefix": "off:tailwind",
-    "body": [
-      "@tailwind base;",
-      "@tailwind components;",
-      "@tailwind utilities;"
-    ],
-    "description": "Tailwind CSS base imports"
-  },
   "nextjs google font import": {
     "prefix": "off:font",
     "body": [
