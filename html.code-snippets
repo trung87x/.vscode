@@ -1,12 +1,12 @@
 {
   "HTML Layout Basic": {
-    "prefix": "html:layout",
+    "prefix": "off:layout",
     "body": [
-      "<header>",
+      "<header class=\"site-header\">",
       "  <div class=\"logo\">",
-      "    <img src=\"logo.png\" alt=\"Logo\" />",
+      "    <img src=\"logo.png\" alt=\"Logo công ty\" />",
       "  </div>",
-      "  <nav>",
+      "  <nav class=\"main-nav\">",
       "    <ul>",
       "      <li><a href=\"/\">Trang chủ</a></li>",
       "      <li><a href=\"/about\">Giới thiệu</a></li>",
@@ -15,8 +15,8 @@
       "  </nav>",
       "</header>",
       "",
-      "<main style=\"display: flex; gap: 20px;\">",
-      "  <section style=\"flex: 3;\">",
+      "<main class=\"container\" style=\"display: flex; gap: 20px;\">",
+      "  <section class=\"content\" style=\"flex: 3;\">",
       "    <article>",
       "      <h2>Bài viết 1</h2>",
       "      <p>Nội dung bài viết 1...</p>",
@@ -27,7 +27,7 @@
       "    </article>",
       "  </section>",
       "",
-      "  <aside style=\"flex: 1;\">",
+      "  <aside class=\"sidebar\" style=\"flex: 1;\">",
       "    <h3>Sidebar</h3>",
       "    <ul>",
       "      <li>Liên kết phụ 1</li>",
@@ -36,28 +36,42 @@
       "  </aside>",
       "</main>",
       "",
-      "<footer>",
+      "<footer class=\"site-footer\">",
       "  <p>&copy; 2025 Công ty của bạn. Bảo lưu mọi quyền.</p>",
       "</footer>"
-    ]
+    ],
+    "description": "HTML layout cơ bản với header, main content, sidebar và footer"
   },
-  "React Sandbox HTML": {
-    "prefix": "html:react-sandbox",
+  "React Sandbox Minimal": {
+    "prefix": "off:react-min",
     "body": [
-      "<html>",
-      "  <body>",
-      "    <div id=\"app\"></div>",
-      "    <script src=\"https://unpkg.com/react@18/umd/react.development.js\"></script>",
-      "    <script src=\"https://unpkg.com/react-dom@18/umd/react-dom.development.js\"></script>",
-      "    <!-- Babel Script -->",
-      "    <script src=\"https://unpkg.com/@babel/standalone/babel.min.js\"></script>",
-      "    <script type=\"text/jsx\">",
-      "      const domNode = document.getElementById('app');",
-      "      const root = ReactDOM.createRoot(domNode);",
-      "      root.render(<h1>Develop. Preview. Ship.</h1>);",
-      "    </script>",
-      "  </body>",
-      "</html>"
-    ]
+      "<div id=\"app\"></div>",
+      "<script src=\"https://unpkg.com/react@18/umd/react.development.js\" crossorigin></script>",
+      "<script src=\"https://unpkg.com/react-dom@18/umd/react-dom.development.js\" crossorigin></script>",
+      "<!-- Babel: cho phép viết JSX trực tiếp trong trình duyệt (chỉ dùng khi sandbox/dev) -->",
+      "<script src=\"https://unpkg.com/@babel/standalone/babel.min.js\"></script>",
+      "<script type=\"text/babel\" data-presets=\"react\">",
+      "  function App() {",
+      "    return (",
+      "      <>",
+      "       <h1>React</h1>",
+      "      </>",
+      "    );",
+      "  }",
+      "",
+      "  const root = ReactDOM.createRoot(document.getElementById('app'));",
+      "  root.render(",
+      "    <StrictMode>",
+      "      <App />",
+      "    </StrictMode>",
+      "  );",
+      "</script>"
+    ],
+    "description": "React 18 + Babel minimal sandbox (không bọc <body>)"
+  },
+  "Tailwind CSS CDN": {
+    "prefix": "off:tailwind-cdn",
+    "body": ["<script src=\"https://cdn.tailwindcss.com\"></script>"],
+    "description": "Chèn script Tailwind CSS CDN vào HTML"
   }
 }

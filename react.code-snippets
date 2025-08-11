@@ -1,276 +1,46 @@
 {
-  "React useEffect": {
-    "prefix": "rc:effect",
+  "React Component": {
+    "prefix": "off:component",
     "body": [
-      "import { useEffect, useState } from 'react';",
-      "",
       "function ${1:ComponentName}() {",
-      "  const [${2:data}, set${2/(.*)/${1:/capitalize}/}] = useState(null);",
-      "",
-      "  useEffect(() => {",
-      "    // Tác vụ phụ, ví dụ gọi API",
-      "    fetch('${3:/api/data}')",
-      "      .then(res => res.json())",
-      "      .then(data => set${2/(.*)/${1:/capitalize}/}(data));",
-      "  }, [${4:dependency}]);",
-      "",
       "  return (",
-      "    <div>",
-      "      <pre>{JSON.stringify(${2}, null, 2)}</pre>",
-      "    </div>",
+      "    <>",
+      "      ${2:Nội dung component}",
+      "    </>",
       "  );",
-      "}",
-      "",
-      "export default ${1:ComponentName};"
-    ],
-    "description": "Tạo React component có useEffect"
-  },
-  "React Event Handler": {
-    "prefix": "rc:event",
-    "body": [
-      "function ${1:ClickButton}() {",
-      "  const handleClick = () => {",
-      "    console.log('${2:Button clicked}');",
-      "  };",
-      "",
-      "  return (",
-      "    <button onClick={handleClick}>${3:Bấm tôi}</button>",
-      "  );",
-      "}",
-      "",
-      "export default ${1:ClickButton};"
-    ],
-    "description": "Tạo React component bắt sự kiện với onClick"
-  },
-  "React Form Input": {
-    "prefix": "rc:form",
-    "body": [
-      "import { useState } from 'react';",
-      "",
-      "function ${1:ContactForm}() {",
-      "  const [${2:name}, set${2/(.*)/${1:/capitalize}/}] = useState('');",
-      "",
-      "  const handleSubmit = (e) => {",
-      "    e.preventDefault();",
-      "    console.log(${2:name});",
-      "  };",
-      "",
-      "  return (",
-      "    <form onSubmit={handleSubmit}>",
-      "      <input",
-      "        type=\"text\"",
-      "        placeholder=\"Nhập tên của bạn\"",
-      "        value={${2:name}}",
-      "        onChange={(e) => set${2/(.*)/${1:/capitalize}/}(e.target.value)}",
-      "      />",
-      "      <button type=\"submit\">Gửi</button>",
-      "    </form>",
-      "  );",
-      "}",
-      "",
-      "export default ${1:ContactForm};"
-    ],
-    "description": "Tạo form nhập liệu với state và xử lý submit trong React"
-  },
-  "React Children": {
-    "prefix": "rc:children",
-    "body": [
-      "function ${1:Wrapper}({ children }) {",
-      "  return (",
-      "    <div className=\"${2:wrapper}\">",
-      "      {children}",
-      "    </div>",
-      "  );",
-      "}",
-      "",
-      "export default ${1:Wrapper};"
-    ],
-    "description": "Tạo component sử dụng props.children để bọc nội dung"
-  },
-  "React Conditional Rendering": {
-    "prefix": "rc:if",
-    "body": [
-      "function ${1:ShowMessage}() {",
-      "  const [${2:visible}, set${2/(.*)/${1:/capitalize}/}] = useState(true);",
-      "",
-      "  return (",
-      "    <div>",
-      "      <button onClick={() => set${2/(.*)/${1:/capitalize}/}(!${2})}>Toggle</button>",
-      "      {${2} && <p>${3:Hiển thị nếu true}</p>}",
-      "    </div>",
-      "  );",
-      "}",
-      "",
-      "export default ${1:ShowMessage};"
-    ],
-    "description": "Hiển thị có điều kiện trong JSX"
-  },
-  "React Map List": {
-    "prefix": "rc:list",
-    "body": [
-      "function ${1:ItemList}() {",
-      "  const ${2:items} = ['Item 1', 'Item 2', 'Item 3'];",
-      "",
-      "  return (",
-      "    <ul>",
-      "      {${2}.map((item, index) => (",
-      "        <li key={index}>{item}</li>",
-      "      ))}",
-      "    </ul>",
-      "  );",
-      "}",
-      "",
-      "export default ${1:ItemList};"
-    ],
-    "description": "Render danh sách sử dụng map trong React"
-  },
-  "React useRef": {
-    "prefix": "rc:ref",
-    "body": [
-      "import { useRef } from 'react';",
-      "",
-      "function ${1:FocusInput}() {",
-      "  const inputRef = useRef(null);",
-      "",
-      "  const handleFocus = () => {",
-      "    inputRef.current?.focus();",
-      "  };",
-      "",
-      "  return (",
-      "    <div>",
-      "      <input ref={inputRef} type=\"text\" />",
-      "      <button onClick={handleFocus}>Focus</button>",
-      "    </div>",
-      "  );",
-      "}",
-      "",
-      "export default ${1:FocusInput};"
-    ],
-    "description": "Sử dụng useRef để truy cập phần tử DOM"
-  },
-  "React useEffect Cleanup": {
-    "prefix": "rc:cleanup",
-    "body": [
-      "import { useEffect } from 'react';",
-      "",
-      "function ${1:Timer}() {",
-      "  useEffect(() => {",
-      "    const interval = setInterval(() => {",
-      "      console.log('${2:Đang chạy}');",
-      "    }, 1000);",
-      "",
-      "    return () => clearInterval(interval);",
-      "  }, []);",
-      "",
-      "  return <div>${3:Đang đếm thời gian...}</div>;",
-      "}",
-      "",
-      "export default ${1:Timer};"
-    ],
-    "description": "Sử dụng useEffect với cleanup function"
-  },
-  "React useReducer": {
-    "prefix": "rc:reducer",
-    "body": [
-      "import { useReducer } from 'react';",
-      "",
-      "const initialState = ${1:0};",
-      "",
-      "function reducer(state, action) {",
-      "  switch (action.type) {",
-      "    case '${2:increment}':",
-      "      return state + 1;",
-      "    case '${3:decrement}':",
-      "      return state - 1;",
-      "    default:",
-      "      return state;",
-      "  }",
-      "}",
-      "",
-      "function ${4:Counter}() {",
-      "  const [state, dispatch] = useReducer(reducer, initialState);",
-      "",
-      "  return (",
-      "    <div>",
-      "      <p>Giá trị: {state}</p>",
-      "      <button onClick={() => dispatch({ type: '${2:increment}' })}>Tăng</button>",
-      "      <button onClick={() => dispatch({ type: '${3:decrement}' })}>Giảm</button>",
-      "    </div>",
-      "  );",
-      "}",
-      "",
-      "export default ${4:Counter};"
-    ],
-    "description": "Quản lý state với useReducer"
-  },
-  "React Custom Hook": {
-    "prefix": "rc:hook",
-    "body": [
-      "import { useState, useEffect } from 'react';",
-      "",
-      "function use${1:Custom}(initialValue) {",
-      "  const [value, setValue] = useState(initialValue);",
-      "",
-      "  useEffect(() => {",
-      "    console.log('Giá trị thay đổi:', value);",
-      "  }, [value]);",
-      "",
-      "  return [value, setValue];",
-      "}",
-      "",
-      "export default use${1:Custom};"
-    ],
-    "description": "Tạo custom hook với useState và useEffect"
-  },
-  "React Async Effect": {
-    "prefix": "rc:async",
-    "body": [
-      "import { useEffect, useState } from 'react';",
-      "",
-      "function ${1:DataFetcher}() {",
-      "  const [${2:data}, set${2/(.*)/${1:/capitalize}/}] = useState(null);",
-      "",
-      "  useEffect(() => {",
-      "    const fetchData = async () => {",
-      "      try {",
-      "        const res = await fetch('${3:/api/data}');",
-      "        const json = await res.json();",
-      "        set${2/(.*)/${1:/capitalize}/}(json);",
-      "      } catch (error) {",
-      "        console.error(error);",
-      "      }",
-      "    };",
-      "    fetchData();",
-      "  }, [${4}]);",
-      "",
-      "  return <pre>{JSON.stringify(${2:data}, null, 2)}</pre>;",
-      "}",
-      "",
-      "export default ${1:DataFetcher};"
-    ],
-    "description": "Gọi API bằng async/await trong useEffect"
-  },
-  "React Context": {
-    "prefix": "rc:context",
-    "body": [
-      "import { createContext, useContext, useState } from 'react';",
-      "",
-      "const ${1:MyContext} = createContext();",
-      "",
-      "export function ${2:MyProvider}({ children }) {",
-      "  const [${3:value}, set${3/(.*)/${1:/capitalize}/}] = useState(${4:null});",
-      "",
-      "  return (",
-      "    <${1:MyContext}.Provider value={{ ${3:value}, set${3/(.*)/${1:/capitalize}/} }}>",
-      "      {children}",
-      "    </${1:MyContext}.Provider>",
-      "  );",
-      "}",
-      "",
-      "export function use${1}() {",
-      "  return useContext(${1:MyContext});",
       "}"
-    ],
-    "description": "Tạo Context Provider và hook để dùng Context"
+      // "",
+      // "export default ${1:ComponentName};"
+    ]
+  },
+  "React Props": {
+    "prefix": "off:props",
+    "body": ["return <${1:h1}>{${2:title}}</${1:h1}>;"]
+  },
+  "React Props List": {
+    "prefix": "off:props-list",
+    "body": [
+      "return (",
+      "  <ul>",
+      "    {${1:items}.map((${2:item}) => (",
+      "      <li key={${2:item}.${3:id}}>{${2:item}.${4:name}}</li>",
+      "    ))}",
+      "  </ul>",
+      ");"
+    ]
+  },
+  "React Usestate": {
+    "prefix": "off:state",
+    "body": [
+      "const [${1:state}, set${2:${1/(.*)/${1:/capitalize}/}}] = useState(${3:initialValue});"
+    ]
+  },
+  "React Client": {
+    "prefix": "off:client",
+    "body": ["\"use client\";"]
+  },
+  "React Server": {
+    "prefix": "off:server",
+    "body": ["\"use server\";"]
   }
 }

@@ -1,6 +1,6 @@
 {
   "nextjs tailwind @": {
-    "prefix": "next:tailwind",
+    "prefix": "off:tailwind",
     "body": [
       "@tailwind base;",
       "@tailwind components;",
@@ -9,7 +9,7 @@
     "description": "Tailwind CSS base imports"
   },
   "nextjs google font import": {
-    "prefix": "next:font",
+    "prefix": "off:font",
     "body": [
       "import { ${1:Inter} } from 'next/font/google';",
       "",
@@ -18,12 +18,12 @@
     "description": "Next.js 13+ Google font import snippet"
   },
   "nextjs font classname": {
-    "prefix": "next:font-class",
+    "prefix": "off:font-class",
     "body": ["{`${${1:fontVar}.className} antialiased`}"],
     "description": "Next.js font variable combined with other classes"
   },
   "nextjs clsx": {
-    "prefix": "next:clsx",
+    "prefix": "off:clsx",
     "body": [
       "  className={clsx(",
       "    '${1:inline-flex}',",
@@ -35,7 +35,7 @@
     ]
   },
   "next-image": {
-    "prefix": "next:image",
+    "prefix": "off:image",
     "body": [
       "<Image",
       "  src=\"${1:/path/to/image.png}\"",
