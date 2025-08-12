@@ -1,6 +1,6 @@
 {
   "HTML Layout Basic": {
-    "prefix": "off:layout",
+    "prefix": "off:html",
     "body": [
       "<header class=\"site-header\">",
       "  <div class=\"logo\">",

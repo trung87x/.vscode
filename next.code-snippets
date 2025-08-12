@@ -36,5 +36,21 @@
       "  alt=\"${5:Image description}\"",
       "/>"
     ]
+  },
+  "next-layout": {
+    "prefix": "off:layout",
+    "body": [
+      "export default function Layout({",
+      "  children,",
+      "}: {",
+      "  children: React.ReactNode;",
+      "}) {",
+      "  return (",
+      "    <div>",
+      "      {children}",
+      "    </div>",
+      "  );",
+      "}"
+    ]
   }
 }
