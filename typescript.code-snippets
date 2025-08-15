@@ -5,7 +5,6 @@
       "export type ${1:TypeName}<T = any> = {",
       "  ${2:property1}: ${3:string};",
       "  ${4:property2}?: ${5:number};",
-      "  ${6:// thêm thuộc tính khác tại đây}",
       "};"
     ],
     "description": "Tạo type với generic"
@@ -31,9 +30,7 @@
   },
   "TS Union Type": {
     "prefix": "off:union",
-    "body": [
-      "type ${1:UserRole} = 'admin' | 'editor' | 'viewer'; // hoặc string | number"
-    ],
+    "body": ["type ${1:UserRole} = 'admin' | 'editor' | 'viewer';"],
     "description": "Tạo union type"
   },
   "TS Generic Function": {

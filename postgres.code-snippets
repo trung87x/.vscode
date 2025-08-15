@@ -1,0 +1,38 @@
+{
+  "PG: Create Extension uuid-ossp": {
+    "prefix": "off:uuid",
+    "body": ["CREATE EXTENSION IF NOT EXISTS \"uuid-ossp\";"],
+    "description": "Tạo extension uuid-ossp nếu chưa tồn tại"
+  },
+  "PG: Create Users Table": {
+    "prefix": "off:create-users",
+    "body": [
+      "CREATE TABLE IF NOT EXISTS users (",
+      "  id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,",
+      "  name VARCHAR(255) NOT NULL,",
+      "  email TEXT NOT NULL UNIQUE,",
+      "  password TEXT NOT NULL",
+      ");"
+    ],
+    "description": "Tạo bảng users với id UUID, name, email, password"
+  },
+  "PG: Insert Users (ON CONFLICT)": {
+    "prefix": "off:insert-users",
+    "body": [
+      "INSERT INTO users (id, name, email, password)",
+      "VALUES (${1:user.id}, ${2:user.name}, ${3:user.email}, ${4:hashedPassword})",
+      "ON CONFLICT (id) DO NOTHING;"
+    ],
+    "description": "Insert user, bỏ qua nếu trùng id"
+  },
+  "PG: Select Invoices with Join": {
+    "prefix": "pg:select-invoices",
+    "body": [
+      "SELECT invoices.amount, customers.name",
+      "FROM invoices",
+      "JOIN customers ON invoices.customer_id = customers.id",
+      "WHERE invoices.amount = ${1:666};"
+    ],
+    "description": "Lấy amount và name từ invoices join customers, lọc theo amount"
+  }
+}

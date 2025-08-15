@@ -29,7 +29,7 @@
     "prefix": "off:image",
     "body": [
       "<Image",
-      "  src=\"${1:/path/to/image.png}\"",
+      "  src=\"${1:/image.png}\"",
       "  width={${2:1000}}",
       "  height={${3:760}}",
       "  className=\"${4:hidden md:block}\"",
@@ -52,5 +52,110 @@
       "  );",
       "}"
     ]
+  },
+  "next-link": {
+    "prefix": "off:link",
+    "body": [
+      "<Link",
+      "  href=\"${1:/path}\"",
+      "  className=\"${2:text-blue-600 hover:underline}\"",
+      ">",
+      "  ${3:Link text}",
+      "</Link>"
+    ]
+  },
+  "next-route": {
+    "prefix": "off:route",
+    "body": [
+      "export async function GET() {",
+      "  try {",
+      "    return NextResponse.json({ message: \"${1:Success}\" });",
+      "  } catch (error) {",
+      "    return NextResponse.json({ error: String(error) }, { status: 500 });",
+      "  }",
+      "}"
+    ],
+    "description": "Tạo route.ts với GET handler cơ bản trong Next.js"
+  },
+  "Next.js Error Component": {
+    "prefix": "off:error",
+    "body": [
+      "\"use client\";",
+      "",
+      "import { useEffect } from \"react\";",
+      "",
+      "export default function Error({",
+      "  error,",
+      "  reset,",
+      "}: {",
+      "  error: Error & { digest?: string };",
+      "  reset: () => void;",
+      "}) {",
+      "  useEffect(() => {",
+      "    console.error(error);",
+      "  }, [error]);",
+      "",
+      "  return (",
+      "    <main className=\"flex h-full flex-col items-center justify-center\">",
+      "      <h2 className=\"text-center\">${1:Something went wrong!}</h2>",
+      "      <button",
+      "        className=\"mt-4 rounded-md bg-blue-500 px-4 py-2 text-sm text-white transition-colors hover:bg-blue-400\"",
+      "        onClick={() => reset()}",
+      "      >",
+      "        ${2:Try again}",
+      "      </button>",
+      "    </main>",
+      "  );",
+      "}"
+    ],
+    "description": "Tạo Error component cho Next.js App Router"
+  },
+  "Next.js Not Found Component (with Icon & Link)": {
+    "prefix": "off:notfound",
+    "body": [
+      "import Link from \"next/link\";",
+      "import { FaceFrownIcon } from \"@heroicons/react/24/outline\";",
+      "",
+      "export default function NotFound() {",
+      "  return (",
+      "    <main className=\"flex h-full flex-col items-center justify-center gap-2\">",
+      "      <FaceFrownIcon className=\"w-10 text-gray-400\" />",
+      "      <h2 className=\"text-xl font-semibold\">${1:404 Not Found}</h2>",
+      "      <p>${2:Could not find the requested resource.}</p>",
+      "      <Link",
+      "        href=\"${3:/dashboard}\"",
+      "        className=\"mt-4 rounded-md bg-blue-500 px-4 py-2 text-sm text-white transition-colors hover:bg-blue-400\"",
+      "      >",
+      "        ${4:Go Back}",
+      "      </Link>",
+      "    </main>",
+      "  );",
+      "}"
+    ],
+    "description": "Tạo not-found.tsx với icon Heroicons và Link trong Next.js"
+  },
+  "Next.js Metadata (Layout)": {
+    "prefix": "of:metadata:layout",
+    "body": [
+      "export const metadata: Metadata = {",
+      "  title: {",
+      "    template: '%s | ${1:My App}',",
+      "    default: '${1:My App}',",
+      "  },",
+      "  description: '${2:Page description here}',",
+      "  metadataBase: new URL('${3:https://example.com}')",
+      "};"
+    ],
+    "description": "Tạo metadata cho layout.tsx với template title, description, metadataBase"
+  },
+  "Next.js Metadata (Page)": {
+    "prefix": "off:metadata:page",
+    "body": [
+      "export const metadata: Metadata = {",
+      "  title: '${1:Page Title}',",
+      "  description: '${2:Page description here}'",
+      "};"
+    ],
+    "description": "Tạo metadata đơn giản cho page.tsx"
   }
 }

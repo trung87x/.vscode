@@ -2,15 +2,13 @@
   "React Component": {
     "prefix": "off:component",
     "body": [
-      "function ${1:ComponentName}() {",
+      "export default function ${1:ComponentName}() {",
       "  return (",
       "    <>",
       "      ${2:Nội dung component}",
       "    </>",
       "  );",
-      "}",
-      "",
-      "export default ${1:ComponentName};"
+      "}"
     ]
   },
   "React Props": {
@@ -42,5 +40,14 @@
   "React Server": {
     "prefix": "off:server",
     "body": ["\"use server\";"]
+  },
+  "React Suspense Skeleton": {
+    "prefix": "off:suspense",
+    "body": [
+      "<Suspense fallback={<${1:SkeletonComponent} />}>",
+      "  <${2:TargetComponent} />",
+      "</Suspense>"
+    ],
+    "description": "Tạo Suspense wrapper với fallback skeleton"
   }
 }
