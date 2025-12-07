@@ -1,0 +1,113 @@
+{
+  // --- COMPONENTS ---
+  "React Functional Component": {
+    "prefix": "rfc", // Giữ nguyên
+    "body": [
+      "function ${1:ComponentName}() {",
+      " return (",
+      "  ${2:<div>$0</div>}",
+      " );",
+      "}"
+    ],
+    "description": "Basic Functional Component"
+  },
+  "Arrow Function Component": {
+    "prefix": "rsc", // Cập nhật (rsc: React Simple Component)
+    "body": ["const ${1:ComponentName} = () => (", " ${2:<div>$0</div>}", ");"],
+    "description": "Arrow Function Component with implicit return"
+  },
+  "Arrow Function Component (Destructured)": {
+    "prefix": "rscd", // Cập nhật (rscd: rsc Destructured)
+    "body": [
+      "const ${1:ComponentName} = ({ ${2:propName} }) => {",
+      " return (",
+      "  <div>{${2:propName}}$0</div>",
+      " );",
+      "}"
+    ],
+    "description": "Component that destructures props immediately"
+  },
+  "React Fragment": {
+    "prefix": "rf", // Cập nhật (rf: React Fragment)
+    "body": ["<>", " $0", "</>"],
+    "description": "Wrap sibling elements without extra DOM nodes"
+  },
+
+  // --- HOOKS (STATE) ---
+  "useState Hook": {
+    "prefix": "rus", // Giữ nguyên
+    "body": [
+      "const [${1:state}, set${1/(.*)/${1:/capitalize}/}] = useState(${2:initialValue});"
+    ],
+    "description": "Standard useState declaration"
+  },
+  "useState Functional Update": {
+    "prefix": "rusf", // Giữ nguyên
+    "body": ["set${1:State}((prev${1}) => prev${1} + 1);"],
+    "description": "Update state based on previous value"
+  },
+  "useState Object Update": {
+    "prefix": "ruso", // Giữ nguyên
+    "body": ["set${1:User}({ ...${2:currentUser}, ${3:key}: ${4:value} });"],
+    "description": "Update specific key in object state using spread syntax"
+  },
+
+  // --- RENDERING LOGIC ---
+  "Render Map (List)": {
+    "prefix": "rmap", // Giữ nguyên
+    "body": [
+      "{${1:items}.map((${2:item}, i) => (",
+      " <${3:div} key={${4:i}}>$0</${3:div}>",
+      "))}"
+    ],
+    "description": "Render a list using .map()"
+  },
+  "Render Ternary (If-Else)": {
+    "prefix": "rt", // Cập nhật (rt: React Ternary)
+    "body": ["{${1:condition} ? ${2:\"TrueValue\"} : ${3:\"FalseValue\"}}"],
+    "description": "Conditional rendering with ternary operator"
+  },
+  "Render Logical AND (If)": {
+    "prefix": "ra", // Cập nhật (ra: React AND)
+    "body": ["{${1:condition} && ${2:<div>Rendered</div>}}"],
+    "description": "Conditional rendering using && operator"
+  },
+
+  // --- EVENTS & PROPS ---
+  "Event Handler with Arguments": {
+    "prefix": "rea", // Cập nhật (rea: React Event Argument)
+    "body": ["onClick={() => ${1:functionName}(${2:params})}"],
+    "description": "Event handler using closure to pass arguments"
+  },
+  "Spread Props": {
+    "prefix": "rsp", // Cập nhật (rsp: React Spread Props)
+    "body": ["{...${1:props}}"],
+    "description": "Spread operator to pass all object properties as props"
+  },
+  "JSX Comment": {
+    "prefix": "rc", // Cập nhật (rc: React Comment)
+    "body": ["{/* $1 */}$0"],
+    "description": "Comment block inside JSX"
+  },
+
+  // --- STYLED COMPONENTS ---
+  "Styled Component": {
+    "prefix": "rs", // Cập nhật (rs: React Styled)
+    "body": [
+      "const ${1:ComponentName} = styled.${2:div}`",
+      " ${3:/* CSS here */}",
+      " &:hover {",
+      "  ${4:/* hover styles */}",
+      " }",
+      "`;"
+    ],
+    "description": "Create a styled component definition"
+  },
+  "Styled Props Logic": {
+    "prefix": "rsprop", // Cập nhật (rsprop: React Styled Prop)
+    "body": [
+      "${1:property}: ${({ ${2:propName} }) => ${2:propName} || \"${3:defaultValue}\"};"
+    ],
+    "description": "Dynamic CSS based on props"
+  }
+}
