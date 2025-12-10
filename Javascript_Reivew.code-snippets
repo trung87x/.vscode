@@ -1,160 +1,24 @@
 {
-  /* =========================================
-     CONSOLE & LOGGING
-     ========================================= */
-  "Console Log": {
-    "prefix": "jlog",
-    "body": ["console.log($1);"],
-    "description": "Log biến ra màn hình console"
-  },
-  "Console Error": {
-    "prefix": "jerr",
-    "body": ["console.error($1);"],
-    "description": "Log lỗi ra màn hình console"
-  },
-  "Console Table": {
-    "prefix": "jtab",
-    "body": ["console.table(${1:arrayOrObject});"],
-    "description": "Hiển thị mảng/đối tượng dưới dạng bảng (dễ nhìn hơn log thường)"
-  },
-
-  /* =========================================
-     FUNCTIONS (HÀM)
-     Nguồn: MDN - Functions & Arrow function expressions
-     ========================================= */
-  "Function Declaration": {
-    "prefix": "jfn",
-    "body": ["function ${1:name}(${2:params}) {", "\t$0", "}"],
-    "description": "Khai báo hàm truyền thống (có hoisting)"
-  },
-  "Arrow Function (Short)": {
-    "prefix": "jaf",
-    "body": ["const ${1:name} = (${2:params}) => ${3:expression};"],
-    "description": "Hàm mũi tên ngắn gọn (Implicit return)"
-  },
-  "Arrow Function (Block)": {
-    "prefix": "jafb",
-    "body": ["const ${1:name} = (${2:params}) => {", "\t$0", "};"],
-    "description": "Hàm mũi tên có thân hàm (Block body)"
-  },
-  "IIFE": {
-    "prefix": "jiife",
-    "body": ["(() => {", "\t$0", "})();"],
-    "description": "Hàm thực thi ngay lập tức (Tạo scope riêng)"
-  },
-
-  /* =========================================
-     ARRAYS (MẢNG)
-     Nguồn: MDN - Array methods
-     ========================================= */
-  "Array ForEach": {
-    "prefix": "jfore",
-    "body": ["${1:array}.forEach((${2:item}) => {", "\t$0", "});"],
-    "description": "Duyệt mảng (không trả về giá trị)"
-  },
-  "Array Map": {
-    "prefix": "jmap",
+  "Review Shopping Cart": {
+    "prefix": "jreview-cart",
     "body": [
-      "const ${1:newArray} = ${2:array}.map((${3:item}) => ${4:expression});"
+      "const CONFIG = Object.freeze({ taxRate: 0.1, currency: 'USD' });",
+      "const products = [",
+      "\t{ id: 1, name: 'Laptop', price: 1500, stock: 5 },",
+      "\t{ id: 2, name: 'Keyboard', price: 100, stock: 0 }",
+      "];",
+      "",
+      "const formatMoney = (amount) => `\\${amount} ${CONFIG.currency}`;",
+      "",
+      "function processCart(...productIds) {",
+      "\tconst cartItems = productIds",
+      "\t\t.map(pid => products.find(p => p.id === pid))",
+      "\t\t.filter(item => item !== undefined);",
+      "",
+      "\tconst total = cartItems.reduce((acc, item) => acc + item.price, 0);",
+      "\tconsole.log(`Total: \\${formatMoney(total)}`);",
+      "}"
     ],
-    "description": "Tạo mảng mới từ mảng cũ (Transformation)"
-  },
-  "Array Filter": {
-    "prefix": "jfil",
-    "body": [
-      "const ${1:filteredArray} = ${2:array}.filter((${3:item}) => ${4:condition});"
-    ],
-    "description": "Lọc các phần tử thỏa mãn điều kiện"
-  },
-  "Array Find": {
-    "prefix": "jfind",
-    "body": [
-      "const ${1:foundItem} = ${2:array}.find((${3:item}) => ${4:condition});"
-    ],
-    "description": "Tìm phần tử đầu tiên thỏa mãn điều kiện"
-  },
-  "Array Reduce": {
-    "prefix": "jred",
-    "body": [
-      "const ${1:result} = ${2:array}.reduce((acc, curr) => {",
-      "\treturn ${3:acc + curr};",
-      "}, ${4:initialValue});"
-    ],
-    "description": "Gom mảng thành một giá trị duy nhất"
-  },
-
-  /* =========================================
-     MODULES (IMPORT/EXPORT)
-     Nguồn: MDN - JavaScript modules
-     ========================================= */
-  "Import Named": {
-    "prefix": "jimp",
-    "body": ["import { ${2:module} } from \"${1:path}\";"],
-    "description": "Import các thành phần có tên (Named Import)"
-  },
-  "Import Default": {
-    "prefix": "jimpd",
-    "body": ["import ${2:name} from \"${1:path}\";"],
-    "description": "Import mặc định (Default Import)"
-  },
-  "Import Dynamic": {
-    "prefix": "jimpdyn",
-    "body": ["import(\"${1:path}\").then((${2:module}) => {", "\t$0", "});"],
-    "description": "Import động (Lazy loading/Code splitting)"
-  },
-  "Export Named": {
-    "prefix": "jexp",
-    "body": ["export const ${1:name} = ${2:value};"],
-    "description": "Xuất hằng số/biến có tên"
-  },
-  "Export Default": {
-    "prefix": "jexpd",
-    "body": ["export default ${1:name};"],
-    "description": "Xuất mặc định (Mỗi file chỉ 1 cái)"
-  },
-
-  /* =========================================
-     OBJECTS & DESTRUCTURING
-     Nguồn: MDN - Object & Destructuring
-     ========================================= */
-  "Destructure Object": {
-    "prefix": "jdob",
-    "body": ["const { ${2:prop} } = ${1:object};"],
-    "description": "Bóc tách thuộc tính từ Object"
-  },
-  "Destructure Array": {
-    "prefix": "jdar",
-    "body": ["const [ ${2:first}, ${3:rest} ] = ${1:array};"],
-    "description": "Bóc tách phần tử từ Array"
-  },
-  "Object Keys": {
-    "prefix": "jkeys",
-    "body": ["Object.keys(${1:obj})"],
-    "description": "Lấy danh sách tên thuộc tính (keys)"
-  },
-  "Object Entries": {
-    "prefix": "jentries",
-    "body": ["Object.entries(${1:obj})"],
-    "description": "Lấy danh sách cặp [key, value]"
-  },
-
-  /* =========================================
-     UTILITIES (TIỆN ÍCH KHÁC)
-     Nguồn: MDN - Ternary & Template literals
-     ========================================= */
-  "Ternary Operator": {
-    "prefix": "jtern",
-    "body": ["${1:condition} ? ${2:trueValue} : ${3:falseValue}"],
-    "description": "Toán tử ba ngôi (Thay thế if-else ngắn gọn)"
-  },
-  "Template Literal Var": {
-    "prefix": "jvar",
-    "body": ["\\${${1:variable}}"],
-    "description": "Chèn biến vào chuỗi (Dùng trong dấu backticks)"
-  },
-  "Set Timeout Arrow": {
-    "prefix": "jtime",
-    "body": ["setTimeout(() => {", "\t$0", "}, ${1:1000});"],
-    "description": "Hẹn giờ dùng Arrow Function (Giữ context 'this')"
+    "description": "Mẫu code review xử lý giỏ hàng (ES6+)"
   }
 }
